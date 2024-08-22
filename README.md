@@ -59,7 +59,8 @@ The `generating_images` folder contains scripts designed to create or preprocess
 2. **Run Adversarial Attack**:
    - Execute `attack_base.py` to generate adversarial examples based on the camouflage texture and background images.
 
-## Adversarial Patch
+
+# Adversarial Patch
 
 ### Purpose
 
@@ -83,6 +84,7 @@ The `Patch_augmenttion` folder is focused on generating and applying adversarial
 2. **Adversarial Patch**:
    - The `texture_seed.png` file is used as the adversarial patch for testing the models.
 
+
 # MonoDepth2
 
 ### Purpose
@@ -100,6 +102,7 @@ The `monodepth2` folder includes a customized version of MonoDepth2, a self-supe
 1. Replace the original `trainer.py`, `train.py`, and `options.py` with the custom versions provided.
 2. Run the `train.py` script to initiate training on your dataset.
 3. Evaluate the trained model using `evaluate_depth.py`.
+
 
 # DenseDepth
 
