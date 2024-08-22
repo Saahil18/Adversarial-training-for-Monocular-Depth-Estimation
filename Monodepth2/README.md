@@ -20,8 +20,8 @@ This repository contains steps to import MonoDepth2 from its official GitHub rep
 ## Objective
 
 - **Import MonoDepth2**: Clone the official MonoDepth2 repository from GitHub.
-- **Replace Core Files**: Replace `trainer.py`, `train.py`, and `options.py` with custom implementations.
-- **Custom Dataset Integration**: Use a custom dataset by incorporating `custom_dataset.py` and adjusting dataset splits.
+- **Replace Core Files**: Replace `trainer.py`, `train.py`, and `options.py` with our custom implementations.
+- **Custom Dataset Integration**: Use our custom dataset by incorporating `custom_dataset.py` and also use our 'splits/custom/' dataset splits.
 - **Train the Model**: Train MonoDepth2 with the custom dataset.
 
 ## Dependencies
@@ -35,7 +35,3 @@ Ensure you have the following dependencies installed:
 - OpenCV
 - TensorBoard (optional for monitoring)
 
-You can install the required Python packages using pip:
-
-```bash
-pip install torch torchvision numpy matplotlib opencv-python tensorboard
