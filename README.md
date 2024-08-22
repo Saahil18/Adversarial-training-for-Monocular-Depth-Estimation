@@ -104,7 +104,7 @@ The `monodepth2` folder includes a customized version of MonoDepth2, a self-supe
 3. Evaluate the trained model using `evaluate_depth.py`.
 
 
-# DenseDepth
+## DenseDepth
 
 ### Purpose
 
@@ -114,14 +114,25 @@ The `densedepth` folder contains a modified version of the DenseDepth model, des
 
 - **Normalization Adjustments**: Adapted to fit the normalization standards of our specific dataset.
 - **Data Structure Changes**: Customized to work with the image outputs from the `generating_images` folder.
-- **Training Script**: Use '`Dense_depth_adversarial_training_and_evaluation` to implement training nd evaluation.
+- **Training Script**: Use `Dense_depth_adversarial_training_and_evaluation.py` to implement training and evaluation.
+
+### Key Files
+
+- **data.py**: Contains the data loader and preprocessing steps to prepare images for training and testing.
+- **loss.py**: Defines the loss functions used during the training of the model.
+- **model.py**: The main model file with updated architecture specific to our depth estimation needs.
+- **updated_outpt.csv**: CSV file containing training data path.
+- **patched_test.csv/**: CSV file for testing raw data after applying adversarial patches.
+- **test_data.csv**: CSV file for testing raw data before applying adversarial patches.
 
 ### Usage
 
-1. Place your custom dataset in the appropriate directory.
-2. Run `Dense_depth_adversarial_training_and_evaluation` to start the training process.
-3. Monitor training progress using graphs.
-4. Evaluate the results and find matrices
+1. **Prepare Your Dataset**: Place your custom dataset in the appropriate directory.
+2. **Run Training**: Execute `Dense_depth_adversarial_training_and_evaluation.py` to start the training process.
+3. **Monitor Progress**: Use graphs and logs to monitor the training process.
+4. **Evaluate Results**: Analyze the results using the metrics provided in `updated_outpt.csv` and test data in `patched_test/`.
+
+
 
 
 
