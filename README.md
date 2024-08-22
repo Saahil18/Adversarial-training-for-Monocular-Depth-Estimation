@@ -26,25 +26,44 @@ This repository contains four primary components: `generating_images`, `densedep
 
 ### Purpose
 
-The `generating_images` folder contains scripts designed to create or preprocess images that will be used in the depth estimation tasks. This includes generating synthetic images, preprocessing real-world images, and creating specific datasets required by DenseDepth and MonoDepth2.
+The `generating_images` folder contains scripts designed to create or preprocess images that will be used in depth estimation tasks. This includes generating synthetic images, preprocessing real-world images, and creating specific datasets required for models like DenseDepth and MonoDepth2.
 
 ### Key Files
 
-- **image_generator.py**: Generates synthetic images with specific characteristics.
-- **preprocess_images.py**: Resizes, crops, and normalizes images to fit the input requirements of the depth models.
-- **dataset_splitter.py**: Splits the generated or collected images into training, validation, and test sets.
+- **data_loader_mde.py**: Contains the `MyDataset` class for loading and preprocessing the training set. 
+  - **data_dir**: Path to RGB background images.
+  - **obj_name**: Path to the car model.
+  - **camou_mask**: Path to the mask for the texture area to attack.
+  - **tex_trans_flag**: Texture transformation flag.
+  - **phy_trans_flag**: Physical transformation flag.
+  - **set_textures**: Method to set textures for camouflage.
+  - **camera_pos**: Camera relative position data.
+
+- **attack_base.py**: Main script for setting up and running the adversarial attack.
+  - **camou_mask**: Path to the camouflage texture mask.
+  - **camou_shape**: Shape of the camouflage texture.
+  - **obj_name**: Path to the car model.
+  - **train_dir**: Path to RGB background images.
+  - **log_dir**: Path to save results.
+
+- **training dataset**: 
+  - **[BaiduNetdisk Link](https://pan.baidu.com/s/1IiD0HYRKjoNOx-hIsamHbg?pwd=3D2F)**: Contains background images and camera position matrix.
+  - **./rgb/*.jpg**: RGB background images.
+  - **./ann.pkl**: Camera position matrix.
 
 ### Usage
 
-1. Run `image_generator.py` to create the required image set.
-2. Use `preprocess_images.py` to ensure all images are in the correct format and resolution.
-3. Utilize `dataset_splitter.py` to divide the images into appropriate datasets.
+1. **Generate Images**:
+   - Use `data_loader_mde.py` to prepare the dataset for training. Specify paths to the required data and settings for texture and camouflage.
+
+2. **Run Adversarial Attack**:
+   - Execute `attack_base.py` to generate adversarial examples based on the camouflage texture and background images.
 
 ## DenseDepth
 
 ### Purpose
 
-The `densedepth` folder contains a modified version of the DenseDepth model. DenseDepth is a state-of-the-art model for depth estimation from a single image, leveraging encoder-decoder architecture and dense connections.
+The `densedepth` folder contains a modified version of the DenseDepth model, designed for depth estimation tasks with custom datasets.
 
 ### Custom Modifications
 
