@@ -22,7 +22,7 @@ This repository contains four primary components: `generating_images`, `densedep
 - **monodepth2/**: A customized version of the MonoDepth2 model, configured for training with our data and integrated with custom scripts.
 - **adversarial_patch/**: Code for generating and applying adversarial patches to assess and improve the robustness of depth estimation models.
 
-## Generating Images
+# Generating Images
 
 ### Purpose
 
@@ -59,43 +59,7 @@ The `generating_images` folder contains scripts designed to create or preprocess
 2. **Run Adversarial Attack**:
    - Execute `attack_base.py` to generate adversarial examples based on the camouflage texture and background images.
 
-## DenseDepth
-
-### Purpose
-
-The `densedepth` folder contains a modified version of the DenseDepth model, designed for depth estimation tasks with custom datasets.
-
-### Custom Modifications
-
-- **Normalization Adjustments**: Adapted to fit the normalization standards of our specific dataset.
-- **Data Structure Changes**: Customized to work with the image outputs from the `generating_images` folder.
-- **Training Scripts**: Updated `trainer.py`, `train.py`, and `options.py` to accommodate the custom dataset and training regime.
-
-### Usage
-
-1. Place your custom dataset in the appropriate directory.
-2. Run `train.py` to start the training process.
-3. Monitor training progress using TensorBoard if necessary.
-
-## MonoDepth2
-
-### Purpose
-
-The `monodepth2` folder includes a customized version of MonoDepth2, a self-supervised depth estimation model that can predict depth from monocular images without requiring ground truth depth data for training.
-
-### Custom Modifications
-
-- **Trainer Updates**: Modified `trainer.py` to integrate with the custom dataset and incorporate additional training options.
-- **Options Configuration**: Adjusted `options.py` for easier command-line argument parsing.
-- **Custom Dataset Integration**: Included `custom_dataset.py` to handle our specific dataset format.
-
-### Usage
-
-1. Replace the original `trainer.py`, `train.py`, and `options.py` with the custom versions provided.
-2. Run the `train.py` script to initiate training on your dataset.
-3. Evaluate the trained model using `evaluate_depth.py`.
-
-## Adversarial Patch
+# Adversarial Patch
 
 ### Purpose
 
@@ -121,6 +85,46 @@ The `adversarial_patch` folder contains code for generating and applying adversa
    - Alternatively, use the `monodepth2` folder to train the MonoDepth2 model.
 3. **Generate Adversarial Patches**: Test the trained models using adversarial patches from the `adversarial_patch` folder.
 4. **Evaluate and Fine-Tune**: Based on adversarial testing, fine-tune the models to improve their robustness.
+
+# MonoDepth2
+
+### Purpose
+
+The `monodepth2` folder includes a customized version of MonoDepth2, a self-supervised depth estimation model that can predict depth from monocular images without requiring ground truth depth data for training.
+
+### Custom Modifications
+
+- **Trainer Updates**: Modified `trainer.py` to integrate with the custom dataset and incorporate additional training options.
+- **Options Configuration**: Adjusted `options.py` for easier command-line argument parsing.
+- **Custom Dataset Integration**: Included `custom_dataset.py` to handle our specific dataset format.
+
+### Usage
+
+1. Replace the original `trainer.py`, `train.py`, and `options.py` with the custom versions provided.
+2. Run the `train.py` script to initiate training on your dataset.
+3. Evaluate the trained model using `evaluate_depth.py`.
+
+# DenseDepth
+
+### Purpose
+
+The `densedepth` folder contains a modified version of the DenseDepth model, designed for depth estimation tasks with custom datasets.
+
+### Custom Modifications
+
+- **Normalization Adjustments**: Adapted to fit the normalization standards of our specific dataset.
+- **Data Structure Changes**: Customized to work with the image outputs from the `generating_images` folder.
+- **Training Scripts**: Updated `trainer.py`, `train.py`, and `options.py` to accommodate the custom dataset and training regime.
+
+### Usage
+
+1. Place your custom dataset in the appropriate directory.
+2. Run `train.py` to start the training process.
+3. Monitor training progress using TensorBoard if necessary.
+
+
+
+
 
 ## License
 
