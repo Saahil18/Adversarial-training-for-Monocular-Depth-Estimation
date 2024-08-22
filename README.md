@@ -70,7 +70,7 @@ The `Patch_augmenttion` folder is focused on generating and applying adversarial
 
 ### Key Files
 
-- **adversarial_patch_colab.ipynb**: Google Colab notebook containing the full workflow for generating and applying adversarial patches. This notebook includes:
+- **adversarial_patch_augmentation.ipynb**: Google Colab notebook containing the full workflow for generating and applying adversarial patches. This notebook includes:
   - YOLOv8 object detection for identifying vehicles.
   - Augmentation of the adversarial patch with images.
   - Application of the patch to images and analysis of depth maps.
@@ -111,12 +111,12 @@ The `densedepth` folder contains a modified version of the DenseDepth model, des
 
 - **Normalization Adjustments**: Adapted to fit the normalization standards of our specific dataset.
 - **Data Structure Changes**: Customized to work with the image outputs from the `generating_images` folder.
-- **Training Script**: Use 'Dense_depth_adversarial_training_and_evaluation' to implement training nd evaluation.
+- **Training Script**: Use '`Dense_depth_adversarial_training_and_evaluation` to implement training nd evaluation.
 
 ### Usage
 
 1. Place your custom dataset in the appropriate directory.
-2. Run 'Dense_depth_adversarial_training_and_evaluation' to start the training process.
+2. Run `Dense_depth_adversarial_training_and_evaluation` to start the training process.
 3. Monitor training progress using graphs.
 4. Evaluate the results and find matrices
 
