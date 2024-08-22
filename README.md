@@ -63,7 +63,7 @@ The `generating_images` folder contains scripts designed to create or preprocess
 
 ### Purpose
 
-The `adversarial_patch` folder is focused on generating and applying adversarial patches to test the robustness of depth estimation models. It includes:
+The `Patch_augmenttion` folder is focused on generating and applying adversarial patches to test the robustness of depth estimation models. It includes:
 
 - **Object Detection**: Using YOLOv8 to detect vehicles in images.
 - **Patch Application**: Augmenting and applying adversarial patches to assess model performance.
@@ -79,7 +79,7 @@ The `adversarial_patch` folder is focused on generating and applying adversarial
 ### Usage
 
 1. **Open and Run the Colab Notebook**:
-   - Execute the cells in `adversarial_patch_colab.ipynb` to follow the process of detecting objects, applying adversarial patches, and analyzing the results.
+   - Execute the cells in `adversarial_patch_augmentation.ipynb` to follow the process of detecting objects, applying adversarial patches, and analyzing the results.
 2. **Adversarial Patch**:
    - The `texture_seed.png` file is used as the adversarial patch for testing the models.
 
@@ -111,13 +111,14 @@ The `densedepth` folder contains a modified version of the DenseDepth model, des
 
 - **Normalization Adjustments**: Adapted to fit the normalization standards of our specific dataset.
 - **Data Structure Changes**: Customized to work with the image outputs from the `generating_images` folder.
-- **Training Scripts**: Updated `trainer.py`, `train.py`, and `options.py` to accommodate the custom dataset and training regime.
+- **Training Script**: Use 'Dense_depth_adversarial_training_and_evaluation' to implement training nd evaluation.
 
 ### Usage
 
 1. Place your custom dataset in the appropriate directory.
-2. Run `train.py` to start the training process.
-3. Monitor training progress using TensorBoard if necessary.
+2. Run 'Dense_depth_adversarial_training_and_evaluation' to start the training process.
+3. Monitor training progress using graphs.
+4. Evaluate the results and find matrices
 
 
 
