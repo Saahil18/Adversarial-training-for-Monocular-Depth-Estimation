@@ -1,4 +1,4 @@
-# Adversarial-training-for-Monocular-Depth-Estimation
+# Adversarial-Training-for-Monocular-Depth-Estimation
 
 ## Overview
 
@@ -26,16 +26,12 @@ This repository contains four primary components: `generating_images`, `densedep
 
 ### Purpose
 
-The `generating_images` folder contains scripts designed to create or preprocess images that will be used in the depth estimation tasks. This may include:
-
-- Generating synthetic images.
-- Preprocessing real-world images.
-- Creating specific image datasets required by DenseDepth and MonoDepth2.
+The `generating_images` folder contains scripts designed to create or preprocess images that will be used in the depth estimation tasks. This includes generating synthetic images, preprocessing real-world images, and creating specific datasets required by DenseDepth and MonoDepth2.
 
 ### Key Files
 
-- **image_generator.py**: Script for generating synthetic images with specific characteristics.
-- **preprocess_images.py**: A tool to resize, crop, and normalize images to fit the input requirements of the depth models.
+- **image_generator.py**: Generates synthetic images with specific characteristics.
+- **preprocess_images.py**: Resizes, crops, and normalizes images to fit the input requirements of the depth models.
 - **dataset_splitter.py**: Splits the generated or collected images into training, validation, and test sets.
 
 ### Usage
@@ -52,7 +48,7 @@ The `densedepth` folder contains a modified version of the DenseDepth model. Den
 
 ### Custom Modifications
 
-- **Normalization Adjustments**: The model has been adapted to fit the normalization standards of our specific dataset.
+- **Normalization Adjustments**: Adapted to fit the normalization standards of our specific dataset.
 - **Data Structure Changes**: Customized to work with the image outputs from the `generating_images` folder.
 - **Training Scripts**: Updated `trainer.py`, `train.py`, and `options.py` to accommodate the custom dataset and training regime.
 
@@ -88,8 +84,8 @@ The `adversarial_patch` folder contains code for generating and applying adversa
 
 ### Key Files
 
-- **generate_patch.py**: Script for generating adversarial patches designed to fool depth estimation models.
-- **apply_patch.py**: Tool to apply the generated patches to test images.
+- **generate_patch.py**: Generates adversarial patches designed to fool depth estimation models.
+- **apply_patch.py**: Applies the generated patches to test images.
 - **evaluate_patch.py**: Evaluates the impact of the adversarial patches on model performance.
 
 ### Usage
