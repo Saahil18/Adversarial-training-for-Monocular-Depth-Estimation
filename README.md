@@ -59,32 +59,29 @@ The `generating_images` folder contains scripts designed to create or preprocess
 2. **Run Adversarial Attack**:
    - Execute `attack_base.py` to generate adversarial examples based on the camouflage texture and background images.
 
-# Adversarial Patch
+## Adversarial Patch
 
 ### Purpose
 
-The `adversarial_patch` folder contains code for generating and applying adversarial patches. These patches are used to test the robustness of depth estimation models by introducing perturbations to the input images.
+The `adversarial_patch` folder is focused on generating and applying adversarial patches to test the robustness of depth estimation models. It includes:
+
+- **Object Detection**: Using YOLOv8 to detect vehicles in images.
+- **Patch Application**: Augmenting and applying adversarial patches to assess model performance.
 
 ### Key Files
 
-- **generate_patch.py**: Generates adversarial patches designed to fool depth estimation models.
-- **apply_patch.py**: Applies the generated patches to test images.
-- **evaluate_patch.py**: Evaluates the impact of the adversarial patches on model performance.
+- **adversarial_patch_colab.ipynb**: Google Colab notebook containing the full workflow for generating and applying adversarial patches. This notebook includes:
+  - YOLOv8 object detection for identifying vehicles.
+  - Augmentation of the adversarial patch with images.
+  - Application of the patch to images and analysis of depth maps.
+- **texture_seed.png**: The adversarial patch used in the experiments. This image is applied to the detected vehicles to test the impact on depth estimation.
 
 ### Usage
 
-1. Use `generate_patch.py` to create an adversarial patch.
-2. Apply the patch to a set of test images using `apply_patch.py`.
-3. Evaluate the performance of the patched images using `evaluate_patch.py`.
-
-## Usage
-
-1. **Generate and Preprocess Images**: Use the `generating_images` scripts to create and prepare your dataset.
-2. **Train Depth Estimation Models**:
-   - Use the `densedepth` folder to train the DenseDepth model.
-   - Alternatively, use the `monodepth2` folder to train the MonoDepth2 model.
-3. **Generate Adversarial Patches**: Test the trained models using adversarial patches from the `adversarial_patch` folder.
-4. **Evaluate and Fine-Tune**: Based on adversarial testing, fine-tune the models to improve their robustness.
+1. **Open and Run the Colab Notebook**:
+   - Execute the cells in `adversarial_patch_colab.ipynb` to follow the process of detecting objects, applying adversarial patches, and analyzing the results.
+2. **Adversarial Patch**:
+   - The `texture_seed.png` file is used as the adversarial patch for testing the models.
 
 # MonoDepth2
 
