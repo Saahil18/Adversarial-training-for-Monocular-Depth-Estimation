@@ -26,7 +26,7 @@ This repository contains four primary components: `generating_images`, `densedep
 
 ### Purpose
 
-The `generating_images` folder contains scripts designed to create or preprocess images that will be used in depth estimation tasks. This includes generating synthetic images, preprocessing real-world images, and creating specific datasets required for models like DenseDepth and MonoDepth2.
+The `generating_images` folder contains scripts designed to create or preprocess images that will be used in depth estimation tasks. This includes generating synthetic images using 3D2Fool code.
 
 ### Key Files
 
