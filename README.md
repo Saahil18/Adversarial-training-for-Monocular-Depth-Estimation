@@ -104,7 +104,8 @@ The `monodepth2` folder includes a customized version of MonoDepth2, a self-supe
 3. Evaluate the trained model using `evaluate_depth.py`.
 
 
-## DenseDepth
+
+# DenseDepth
 
 ### Purpose
 
